@@ -1,11 +1,6 @@
-# Coding-Test
+React Written Test
 
-Please checkout new brach
-
-Title Format: `TR{{Number}} - Title`
-
-## Example:
-
-  TR001 - Sample Push
-  
-  TR011 - Sample React Written Test
+Login Function
+1. Click Login in Navbar
+2. Enter Name, Email(admin@admin.com), Password(123)
+3. Click Login

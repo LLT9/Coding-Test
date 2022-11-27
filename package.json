@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "crypto": "^1.0.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "keyv": "^4.5.2",
+    "passport": "^0.6.0",
+    "passport-accesstoken": "^0.1.0",
+    "passport-local": "^1.0.0"
+  }
+}

@@ -1,11 +1,12 @@
 # Coding-Test
 
-Please checkout new brach
+Luo Zhiji, Jacky Coding Test
 
-Title Format: `TR{{Number}} - Title`
+folder structure:
 
-## Example:
+/page: to store different page
+/redux: to store different redux-toolkit data
+/translation: to store the different language json file
+/layout: to  store different common layout like ProtectedRoute 
+/component: to store some reuseable components
 
-  TR001 - Sample Push
-  
-  TR011 - Sample React Written Test

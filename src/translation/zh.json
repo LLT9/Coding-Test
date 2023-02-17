@@ -1,0 +1,14 @@
+{
+    "login": "登入",
+    "welcome_page": "歡迎來到歡迎頁面",
+    "login_page": "歡迎來到登錄頁面",
+    "go_to_user_profile": "轉到用戶個人資料",
+    "go_to_login": "前往登錄頁面",
+    "welcome_to_main_page": "歡迎來到主頁",
+    "incorrect_pw_username": "錯誤的用戶名或密碼",
+    "language": "語言",
+    "main_page_here": "用戶個人資料頁面在這裡",
+    "name":"姓名",
+    "password": "密碼",
+    "logout":"登出"
+}

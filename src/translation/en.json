@@ -1,0 +1,14 @@
+{
+    "login": "Login ",
+    "welcome_page": "Welcome To Welcome Page ",
+    "login_page": "Welcome To Login Page ",
+    "go_to_user_profile": "Go To User Profile ",
+    "go_to_login": "Go To Login Page ",
+    "welcome_to_main_page": "Welcome To Main Page ",
+    "incorrect_pw_username": "Incorrect Username or Password ",
+    "language": "Language",
+    "main_page_here": "User Profile Page Here",
+    "name":"Name",
+    "password": "Password",
+    "logout":"Logout"
+}

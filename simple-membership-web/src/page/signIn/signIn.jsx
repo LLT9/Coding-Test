@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux'
-import { SIGN_IN, SIGN_OUT } from '../../redux/reducer'
 import "./signIn.scss";
 
 import data from "./userData.json";
 
-const SignIn = ({ userData, setUserData }) => {
-  const navigate = useNavigate();
+const SignIn = ({ isSignIn, setUserData }) => {
   const [userInput, setInput] = useState({ account: "", password: "" });
   const [warn, setWarn] = useState("");
+  const navigate = useNavigate();
+  //i18n
   const { t } = useTranslation();
 
   //Regex
@@ -30,8 +29,8 @@ const SignIn = ({ userData, setUserData }) => {
     //若user輸入符合規範就送出request
     if (accountIsValid() === "valid" && passwordIsValid() === "valid") {
       const url = "api";
-      let someKindOfFetch = (url, userInput) => {
-        //後端確認帳密，並回傳用戶資料
+      let fakeFetch = (url, userInput) => {
+        //宣告一個假的fetch，執行後端確認帳密，並回傳用戶資料
         if (
           userInput.account === "admin" &&
           userInput.password === "Admin&8181"
@@ -40,15 +39,18 @@ const SignIn = ({ userData, setUserData }) => {
             resolve(data);
           });
         }
-
+        //帳密錯誤提示
         setWarn("error");
       };
-      someKindOfFetch(url, userInput)
-        //一般fetch需轉譯json檔
+      //執行fetch
+      fakeFetch(url, userInput)
+        //一般fetch需轉譯
         //.then((res)=>{return res.json()})
         .then((res) => {
-          setUserData(res);
-          return res;
+          return new Promise((resolve, reject) => {
+            setUserData(res);
+            resolve();
+          });
         })
         .then((res) => {
           navigate("/userProfile");
@@ -62,9 +64,7 @@ const SignIn = ({ userData, setUserData }) => {
   }
 
   useEffect(() => {
-    (function isSignIn() {
-      userData.token ? navigate("../userProfile") : console.log("尚未登入");
-    })();
+    isSignIn ? navigate("../userProfile") : console.log("尚未登入");
   }, []);
 
   return (

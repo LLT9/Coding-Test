@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import {
   BrowserRouter,
   Routes,
@@ -22,19 +22,37 @@ import SwitchLanguage from "./components/switchLanguage/switchLanguage";
 const ProtectedRoute = ({ token, redirectPath }) => {
   return token ? <Outlet /> : <Navigate to={redirectPath} replace />;
 };
-function App() {
-  const [userData, setUserData] = useState({token: null});
 
+function App() {
+  const [userData, setUserData] = useState({ token: null });
+  const [isSignIn, setSignIn] = useState(false);
+
+  useEffect(() => {
+    userData.token ? setSignIn(true) : setSignIn(false);
+  }, [userData]);
   return (
     <div className="App">
       <BrowserRouter>
         <Suspense fallback={"loading"}>
-          <SwitchLanguage userData={userData} setUserData={setUserData}  />
+          <SwitchLanguage userData={userData} setUserData={setUserData} />
           <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="signin" element={<SignIn userData={userData} setUserData={setUserData} />} />
-            <Route element={<ProtectedRoute token={userData.token} redirectPath={"./signin"}  />}>
-              <Route path="userProfile" element={<UserProfile userData={userData} />} />
+            <Route path="/" element={<Welcome isSignIn={isSignIn} />} />
+            <Route
+              path="signin"
+              element={<SignIn isSignIn={isSignIn} setUserData={setUserData} />}
+            />
+            <Route
+              element={
+                <ProtectedRoute
+                  token={userData.token}
+                  redirectPath={"./signin"}
+                />
+              }
+            >
+              <Route
+                path="userProfile"
+                element={<UserProfile userData={userData} />}
+              />
             </Route>
           </Routes>
         </Suspense>

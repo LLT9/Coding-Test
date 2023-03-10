@@ -8,6 +8,10 @@
         font-size: 3em;
     }
 
+    .hide {
+        display: none;
+    }
+
 
     //RWD (width is higher than 412, lower than 1280)
     @media (max-width: 1250px) {

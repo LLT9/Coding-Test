@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const UserProfile = ({userData}) => {
   const [message, setMessage] = useState(false);
   const { t } = useTranslation();
-  console.log(userData);
+
   return (
     <div id="profileContainer" className="container">
       <aside>

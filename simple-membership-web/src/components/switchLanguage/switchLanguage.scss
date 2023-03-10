@@ -1,0 +1,76 @@
+#switch {
+    position: absolute;
+    top: 11%;
+    right: 10.5%;
+    padding: 0.5% 0.5%;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 5px 5px rgba(33, 39, 39, 0.15);
+    background-color: rgb(233, 233, 233);
+    border-radius: 5px;
+
+    .link, button {
+        width: 100px;
+        // width: 30%;
+        // padding: 2px 5px;
+        margin: 0 10px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .btn {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 10% 0 0 0;
+        // border: 1px solid red;
+        
+        button {
+            padding: 2px 5px;
+            width: 25%;
+            // font-weight: 600;
+        }
+    }
+
+    .show {
+        display: flex;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    
+    //RWD (width is higher than 412, lower than 1280)
+    @media (max-width: 1250px) {
+        width: 78%;
+        right: 11%;
+        top: 11%;
+        box-sizing: border-box;
+        justify-content: space-evenly;
+
+        // .show {
+        //     visibility: visible;
+        // }
+    
+        // .hide {
+        //     visibility: hidden;
+        // }
+    
+    }
+
+    //RWD (width is lower than 412)
+    @media (max-width: 420px) {
+
+        .link, button {
+            width: 100px;
+            font-size: x-small;
+            font-weight: 700;
+            margin: 0 5px;
+            padding: 0;
+        }
+    }
+}

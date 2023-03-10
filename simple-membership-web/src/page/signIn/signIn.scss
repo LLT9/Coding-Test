@@ -1,0 +1,111 @@
+#singInContainer {
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .inputContainer {
+        height: 130px;
+
+        label {
+            display: block;
+        }
+
+        input {
+            text-align: center;
+            border-radius: 10px;
+            padding: 2px 5px;
+            min-height: 20px;
+        }
+
+        .warn {
+            display: none;
+            font-size: small;
+            margin: 5px 2px;
+            p {
+                margin: 0px 0;
+            }
+        }
+
+        .invalid {
+            display: block;
+            color: red;
+        }
+
+        .valid {
+            display: none;
+        }
+    }
+
+
+    .reject {
+        display: none;
+        position: absolute;
+        width: 30%;
+        top: 38%;
+        left: 35%;
+        border-radius: 10px;
+        background-color: darkgray;
+        border: 3px solid lightseagreen;
+        z-index: 10;
+        padding: 3px 5px;
+        box-sizing: border-box;
+    }
+
+    .warnShow {
+        display: block;
+        animation: show 2s ease-in forwards;
+
+        @keyframes show {
+            0% {
+                opacity: 1;
+                display: block;
+            }
+
+            99% {
+                opacity: 0;
+                display: block;
+            }
+
+            100% {
+                opacity: 0;
+                display: none;
+            }
+        }
+    }
+
+
+
+
+    //RWD (width is higher than 412, lower than 1280)
+    @media (max-width: 1250px) {
+
+
+            .reject {
+                width: 70%;
+                top: 35%;
+                left: 15%;
+            }
+
+            button {
+                margin-top: 3%;
+            }
+    }
+
+    //RWD (width is lower than 412)
+    @media (max-width: 420px) {
+        .inputContainer {
+            height: 110px;
+        }
+
+        .reject {
+            width: 90%;
+            top: 40%;
+            left: 5%;
+        }
+
+    }
+
+
+}

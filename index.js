@@ -6,16 +6,15 @@ const jwt = require('jsonwebtoken')
 const { sortArray } = require('./sortArray')
 const { keyv } = require('./config/connection')
 
+app.use(express.json())
 app.get('/hello', (req, res) => {
   res.send('Hello World')
 })
 
 app.post('/sortnum', (req, res) => {
-  const array = [2, 3, 5, 1, 4, 6, 15, 9]
-
+  const { array } = req.body
   const result = sortArray(array)
   res.send({
-    nums: array,
     sortArray: result
   })
 })

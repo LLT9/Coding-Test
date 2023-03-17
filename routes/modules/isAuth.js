@@ -1,16 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const passport = require('passport')
-const { checkToken } = require('../../middleware/tokenAuth')
 
-// add checkToken middleware
-router.get(
-  '/is_auth',
-  checkToken,
-  passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login'
-  })
-)
+const { checkToken } = require('../../middleware/tokenAuth')
+const { authenticator } = require('../../middleware/adminAuth')
+
+// add checkToken middleware and check login status function
+router.get('/is_auth', checkToken, authenticator)
 
 module.exports = router

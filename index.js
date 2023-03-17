@@ -6,6 +6,7 @@ const app = express()
 const port = 3000 || process.env.PORT
 const { checkAdmin } = require('./controller/userAuth')
 const { sortArray } = require('./controller/sortArray')
+const { checkToken } = require('./middleware/tokenAuth')
 const { usePassport } = require('./config/passport')
 
 // invoke Passport function
@@ -37,8 +38,10 @@ app.post('/login', async (req, res) => {
   return checkAdmin(name, password, res)
 })
 
+// add checkToken middleware
 app.get(
   '/is_auth',
+  checkToken,
   passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login'

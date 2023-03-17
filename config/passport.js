@@ -1,6 +1,6 @@
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
-const { keyv } = require('./connection')
+
 
 module.exports = (app) => {
   // initialize passport module

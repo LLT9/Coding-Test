@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { keyv } = require('../config/connection')
 const jwt = require('jsonwebtoken')
 

@@ -4,19 +4,22 @@
   "description": "Please checkout new brach",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "seed": "node seeder/createDatabse.js & node seeder/createTable.js & node seeder/insertTable.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@keyv/mysql": "^1.6.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
     "keyv": "^4.5.2",
+    "mysql": "^2.18.1",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0"
   }

@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const { checkAdmin } = require('../../controller/userAuth')
+const { checkDBAdmin } = require('../../controller/userAuthDB')
+const passport = require('passport')
 
-router.post('/', (req, res) => {
+router.post('/', passport.authenticate('local'), (req, res) => {
   const { name, password } = req.body
-  return checkAdmin(name, password, res)
+  return checkDBAdmin(name, password, req, res)
 })
 
 module.exports = router

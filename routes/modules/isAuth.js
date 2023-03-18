@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-
 const { checkToken } = require('../../middleware/tokenAuth')
 const { authenticator } = require('../../middleware/adminAuth')
 

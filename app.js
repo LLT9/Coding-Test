@@ -3,11 +3,11 @@ const express = require('express')
 const session = require('express-session')
 const app = express()
 const port = 3000 || process.env.PORT
+const passport = require('passport')
+const connect = require('./config/mysql')
+const bodyParser = require('body-parser')
 const usePassport = require('./config/passport')
 const routes = require('./routes/index')
-
-// invoke Passport function
-usePassport(app)
 
 app.use(
   session({
@@ -16,8 +16,16 @@ app.use(
     saveUninitialized: true
   })
 )
-app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
+// // initialize passport module
+app.use(passport.initialize())
+app.use(passport.session())
+
+// invoke Passport function
+usePassport(passport)
+
+app.use(express.json())
 app.use(routes)
 
 app.listen(port, () => {

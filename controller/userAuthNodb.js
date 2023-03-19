@@ -1,6 +1,6 @@
 require('dotenv').config()
 const jwt = require('jsonwebtoken')
-const keyv = require('../config/keyv')
+const { keyv } = require('../config/keyv')
 
 async function checkNodbAdmin(name, password, req, res) {
   try {

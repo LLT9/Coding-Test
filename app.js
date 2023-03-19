@@ -5,7 +5,9 @@ const app = express()
 const port = 3000 || process.env.PORT
 const passport = require('passport')
 const bodyParser = require('body-parser')
+const connect = require('./config/mysql')
 const usePassport = require('./config/passport')
+const usePassportNodb = require('./config/passportNodb')
 const routes = require('./routes/index')
 
 app.use(
@@ -21,8 +23,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(passport.initialize())
 app.use(passport.session())
 
-// invoke Passport function
-usePassport(passport)
+// invoke passport function
+if (!connect()) {
+  usePassportNodb(passport) // no database
+}
+usePassport(passport) // database
 
 app.use(express.json())
 app.use(routes)

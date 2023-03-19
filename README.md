@@ -55,6 +55,8 @@ http://localhost:3000/is_auth
 http://localhost:3000/is_auth/nodb
 ```
 
+---
+
 The differnece of db version and no db version are create MySQL connection or use keyv package to generate valid connection, make sure following steps before starting project.
 
 Please make sure you have installed Node.js, Express and MySQL.
@@ -73,7 +75,7 @@ git clone https://github.com/Coli-co/Coding-Test.git
 cd Coding-Test
 ```
 
-3.Open project
+3. Open project
 
 ```
 code .

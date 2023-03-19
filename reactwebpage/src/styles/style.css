@@ -1,4 +1,138 @@
+@charset "UTF-8";
 .Info {
   background-color: black;
   color: white;
+}
+
+.Login .divwel {
+  width: 90vmin;
+  height: 90vmin;
+  margin: 5vmin auto;
+  background-color: lightblue;
+  border-radius: 3rem;
+  overflow: inherit;
+}
+.Login .divwel .h1wel {
+  line-height: 40vmin;
+  font-size: 16vmin;
+  text-align: center;
+  overflow-wrap: anywhere;
+  color: #444;
+}
+.Login .divwel .h1wel:hover {
+  color: #777;
+  transition: all 0.7s ease;
+  cursor: pointer;
+}
+.Login .divwel .h1wel:focus,
+.Login .divwel .h1wel:action,
+.Login .divwel .h1wel:click {
+  color: #333;
+}
+.Login .divwel .login {
+  font-size: 3rem;
+}
+.Login .divwel .login input {
+  font-size: 3rem;
+}
+.Login .divwel .login .acc,
+.Login .divwel .login .psw {
+  text-align: center;
+  margin: 2rem 0;
+}
+.Login .divwel .login .btn {
+  width: 80vmin;
+  text-align: center;
+  margin: 5vmin auto;
+}
+
+.Layout .navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.Layout .navbar .nav {
+  font-size: 3vh;
+}
+
+.Profile .divsq {
+  width: 90vmin;
+  height: 90vmin;
+  margin: 5vmin auto;
+  background-color: lightblue;
+  border-radius: 3rem;
+  padding: 10vmin;
+  display: flex;
+}
+.Profile .divsq .left {
+  flex: 1 3 3;
+  width: 30vmin;
+}
+.Profile .divsq .left .userName {
+  font-size: 1.3rem;
+  text-align: center;
+}
+.Profile .divsq .left .photo {
+  width: 90%;
+  border-radius: 50%;
+  margin: 5%;
+}
+.Profile .divsq .right {
+  flex: 1 3 5;
+  width: 50vmin;
+  padding: 5vmin;
+}
+.Profile .divsq .right .wel {
+  text-align: center;
+  padding: 3vmin;
+}
+.Profile .divsq .right .set {
+  border-radius: 1rem;
+}
+.Profile .divsq .right .set .info {
+  transform: translateX(10%);
+}
+.Profile .divsq .right .set ul {
+  list-style: none;
+}
+.Profile .divsq .right .set ul .liItem {
+  margin: 0.3rem;
+}
+
+.Welcome {
+  /* 外框與邊界歸0 */
+  /* 字型設定 */
+  /* welcome */
+}
+.Welcome * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.Welcome * {
+  font-family: "Noto Sans TC", sans-serif;
+}
+.Welcome .divwel {
+  width: 90vmin;
+  height: 90vmin;
+  margin: 5vmin auto;
+  background-color: lightblue;
+  border-radius: 3rem;
+}
+.Welcome .divwel .h1wel {
+  line-height: 90vmin;
+  font-size: 16vmin;
+  text-align: center;
+  overflow-wrap: anywhere;
+  color: #444;
+}
+.Welcome .divwel .h1wel:hover {
+  color: #777;
+  transition: all 0.7s ease;
+  cursor: pointer;
+}
+.Welcome .divwel .h1wel:focus,
+.Welcome .divwel .h1wel:action,
+.Welcome .divwel .h1wel:click {
+  color: #333;
 }/*# sourceMappingURL=style.css.map */

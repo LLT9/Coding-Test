@@ -1,19 +1,20 @@
 import { Outlet, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import React from "react";
 
 const Layout = () => {
     return (
-        <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to='/'>Index</Link>
+        <div className='Layout'>
+            <nav style={{ backgroundColor: "skyblue" }}>
+                <ul className='navbar' style={{}}>
+                    <li className='nav' style={{}}>
+                        <Link to='/'>Login</Link>
                     </li>
-                    <li>
+                    <li className='nav' style={{}}>
                         <Link to='/welcome'>Welcome</Link>
                     </li>
-                    <li>
+                    <li className='nav' style={{}}>
                         <Link to='/profile'>Profile</Link>
                     </li>
                 </ul>

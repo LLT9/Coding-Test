@@ -11,16 +11,12 @@ const SwitchLanguage = ({userData, setUserData}) => {
   }
 
   return (
-    <div id="switch">
-      {/* <div className="linkContainer"> */}
-      <Link className={`link ${userData.token ? "show":"hide"}`} to={"/"} onClick={()=>setUserData({token:null})}>{t("switchLanguage.signOut")}</Link>
+    <nav id="switch">
+      <Link  className={`link ${userData.token ? "show" : "hide"}`} to={"/"} onClick={() => setUserData({ token: null })}> {t("switchLanguage.signOut")}</Link>
       <Link className="link" to={"/"}>{t("switchLanguage.homePage")}</Link>
-      {/* </div> */}
-      {/* <div className="btn"> */}
-        <button type="button" onClick={() => changeLanguage("en")}>English</button>
-        <button type="button" onClick={() => changeLanguage("zh-tw")}>繁體中文</button>
-      {/* </div> */}
-    </div>
+      <button type="button" onClick={() => changeLanguage("en")}>English</button>
+      <button type="button" onClick={() => changeLanguage("zh-tw")}>繁體中文</button>
+    </nav>
   );
 };
 

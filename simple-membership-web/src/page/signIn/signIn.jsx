@@ -13,15 +13,15 @@ const SignIn = ({ isSignIn, setUserData }) => {
   const { t } = useTranslation();
 
   //Regex
-  const accountRegex = /[^a-z0-9]/;
-  const passwordRegex = /[^A-za-z0-9\s*\-^%$#!&/]/;
+  const accountRegex = /[A-Za-z0-9]/;
+  const passwordRegex = /[A-Za-z0-9\s*\-^%$#!&/]/;
 
   const accountIsValid = () => {
-    if (!accountRegex.test(userInput.account)) return "valid";
+    if (accountRegex.test(userInput.account)) return "valid";
     if (userInput.account.length > 0) return "invalid";
   };
   const passwordIsValid = () => {
-    if (!passwordRegex.test(userInput.password)) return "valid";
+    if (passwordRegex.test(userInput.password)) return "valid";
     if (userInput.password.length > 0) return "invalid";
   };
 

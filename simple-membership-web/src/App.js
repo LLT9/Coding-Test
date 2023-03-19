@@ -34,27 +34,16 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Suspense fallback={"loading"}>
+          
           <SwitchLanguage userData={userData} setUserData={setUserData} />
           <Routes>
             <Route path="/" element={<Welcome isSignIn={isSignIn} />} />
-            <Route
-              path="signin"
-              element={<SignIn isSignIn={isSignIn} setUserData={setUserData} />}
-            />
-            <Route
-              element={
-                <ProtectedRoute
-                  token={userData.token}
-                  redirectPath={"./signin"}
-                />
-              }
-            >
-              <Route
-                path="userProfile"
-                element={<UserProfile userData={userData} />}
-              />
+            <Route path="signin" element={<SignIn isSignIn={isSignIn} setUserData={setUserData} />} />
+            <Route element={ <ProtectedRoute token={userData.token} redirectPath={"./signin"} />} >
+              <Route path="userProfile" element={<UserProfile userData={userData} />} />
             </Route>
           </Routes>
+
         </Suspense>
       </BrowserRouter>
     </div>

@@ -6,6 +6,7 @@ const port = 3000 || process.env.PORT
 const passport = require('passport')
 const bodyParser = require('body-parser')
 const connect = require('./config/mysql')
+const { keyv } = require('./config/keyv')
 const usePassport = require('./config/passport')
 const usePassportNodb = require('./config/passportNodb')
 const routes = require('./routes/index')
@@ -17,14 +18,16 @@ app.use(
     saveUninitialized: true
   })
 )
-app.use(bodyParser.urlencoded({ extended: true }))
-
-// // initialize passport module
+// initialize passport module
 app.use(passport.initialize())
 app.use(passport.session())
 
-// invoke passport function
-if (!connect()) {
+app.use(bodyParser.urlencoded({ extended: true }))
+
+// switch passport function & connection
+let con = connect()
+if (!con) {
+  con = keyv // switch connect
   usePassportNodb(passport) // no database
 }
 usePassport(passport) // database

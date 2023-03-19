@@ -4,7 +4,6 @@ const session = require('express-session')
 const app = express()
 const port = 3000 || process.env.PORT
 const passport = require('passport')
-const connect = require('./config/mysql')
 const bodyParser = require('body-parser')
 const usePassport = require('./config/passport')
 const routes = require('./routes/index')

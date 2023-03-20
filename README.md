@@ -2,10 +2,10 @@
 
 Please checkout new brach
 
-Title Format: `TR{{Number}} - Title`
+Title Format: `{{Full Name}} - Title`
 
 ## Example:
 
-  TR001 - Sample Push
+  Chan tai man - Sample Push
   
-  TR011 - Sample React Written Test
+  Wong siu ming - Sample React Written Test

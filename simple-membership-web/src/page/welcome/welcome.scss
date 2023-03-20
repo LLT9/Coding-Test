@@ -1,0 +1,27 @@
+#welcomeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        text-align: center;
+        font-size: 3em;
+    }
+
+    .hide {
+        display: none;
+    }
+
+
+    //RWD (width is higher than 412, lower than 1280)
+    @media (max-width: 1250px) {
+        padding: 10% 5%;
+
+        h1 {
+            font-size: 2.5em;
+        }
+    }
+
+    //RWD (width is lower than 412)
+    @media (max-width: 420px) {}
+}

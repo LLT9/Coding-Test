@@ -1,0 +1,32 @@
+{
+  "welcomePage": {
+    "pageTitle": "Welcome!",
+    "signin": "Sign in"
+  },
+  "signInPage": {
+    "account": "Account",
+    "accountWarn1": "Account can contain",
+    "accountWarn2": "(A-Z, a-z, 0-9)",
+    "password": "Password",
+    "passwordWarn1": "Password can contain",
+    "passwordWarn2": "(A-Z, a-z, 0-9, *, -, ^, %, $, #, !, &, /)。",
+    "reject": "Please fill in the valid Account and Password.",
+    "signin": "Sign in",
+    "success": "Sign in seccessfully!",
+    "fail": "Invalid account or password, please check and try again."
+  },
+  "userProfilePage": {
+    "pageTitle": "User Page",
+    "sideBar": {
+      "basic": "Basic",
+      "theme": "Theme",
+      "privacy": "Privacy",
+      "advanced": "Advanced"
+    },
+    "message":"Not available now."
+  },
+  "switchLanguage": {
+    "homePage": "Home",
+    "signOut": "Sign out"
+  }
+}

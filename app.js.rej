@@ -1,0 +1,44 @@
+diff a/app.js b/app.js	(rejected hunks)
+@@ -58,36 +58,33 @@
+ 
+     req.user = user
+     next()
+   })(req, res, next)
+ }
+ 
+-app.post('/login', (req, res) => {
+-  console.log('/login', req.body)
++app.post('/login', authenticate, (req, res) => {
++  console.log('/login req.body', req.body)
+   const userList = [
+     {
+       account: 'admin',
+       password: '123456'
+     }
+   ]
+   const checkUser = userList.find(i => i.account === req.body.account)
+   // console.log('checkUser', checkUser)
+   if (!checkUser) {
+-    // console.log('in')
++    console.log('in')
+     return res.render('error')
+   }
+   if (checkUser.password !== req.body.password) {
+-    // console.log('pss')
++    console.log('pss')
+     return res.render('error')
+   }
+   console.log('isok')
+-  // console.log('req', req)
+-  // console.log('~~~~~~~~~~~~~~~~~')
+-
+-  res.redirect('back')
+-  // console.log('reqs', res)
++  res.status(200).json({ message: "Login success." })
++  // res.redirect('back')
+ })
+ 
+ app.get('/is_auth', authenticate, (req, res) => {
+   // console.log('req', req)
+   console.log('~~~~~~~~~~~~~~~~~')
+   // console.log('reqs', res)

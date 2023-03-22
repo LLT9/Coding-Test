@@ -1,0 +1,6 @@
+diff a/rest.http b/rest.http	(rejected hunks)
+@@ -0,3 +1,4 @@
++@baseUrl = http://localhost:3000
+ 
+ @contentType = application/json
+ @createdAt = {{$datetime iso8601}}

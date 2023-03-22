@@ -12,12 +12,14 @@ Content-Type: application/json
 }
 
 ###
+# @name login
 POST {{baseUrl}}/login HTTP/1.1
 Content-Type: application/json
 
 {
-  # "name": "",
-  # "password": "Admin&8181",
   "name": "admin",
   "password": "Admin&8181"
 }
+
+###
+# @authToken = {{login.response.headers.X-AuthToken}}

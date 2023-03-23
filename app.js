@@ -1,12 +1,19 @@
-const express = require('express')
-const passport = require('./config/passport.js')
-const Keyv = require('keyv')
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 const moment = require('moment')
-const app = express()
+const express = require('express')
+const jwt = require('jsonwebtoken')
+const KeyvRedis = require('@keyv/redis')
+const keyvRedis = new KeyvRedis('redis://localhost:6379')
+keyvRedis.on('error', err => console.log('Redis Connection Error', err))
+const db = require('./config/mysqldb.js')
 
-const keyv = new Keyv('redis://localhost:6379')
-keyv.on('error', err => console.log('Redis Connection Error', err))
-const users = new Keyv('redis://localhost:6379', { namespace: 'users' })
+const { apiErrorHandler  } = require('./middleware/error-handler.js')
+const { authenticated } = require('./middleware/auth.js')
+const { token_valid }= require('./middleware/token_valid.js')
+
+const app = express()
 
 const PORT = 3000
 
@@ -16,7 +23,7 @@ app.get('/hello', (req, res) => {
   res.status(200).json({ status: 'success', message: 'Hello World'})
 })
 
-app.post('/sortnum', (req, res) => {
+app.post('/sortnum', async (req, res) => {
   let { nums } = req.body
   let newNums = nums.split(',')
   const regex = /^\d+(,\d+)*,?$/
@@ -29,48 +36,40 @@ app.post('/sortnum', (req, res) => {
   res.status(200).json({ status: 'success', newNums })
 })
 
-async function authenticate(req, res, next) {
-  await createUser(userData)
-  const newUser = await findUser(1)
-  passport.authenticate('token', function (err, user, info) {
-    if (err) {
-      return next(err)
-    }
-    if (!user) {
-      return res.status(401).json({ message: "Incorrect token credentials" })
-    }
-    req.user = user
-    next()
-  })(req, res, next)
-}
-
 app.post('/login', async (req, res) => {
-  const userData = {
-    id: 1,
-    name: "admin",
-    password: "Admin&8181",
-    created: new Date(),
-    updated: new Date()
-  }
-  const newUser = await users.set('admin', userData)
   const { name, password } = req.body
   if (!name || !password) {
     return res.status(401).json({ status: 'error', message: '請填寫帳號或密碼。' })
   }
-  const user = await users.get(name)
-  if (!user) return res.status(401).json({ status: 'error', message: '此帳號不存在。' })
-  if (password !== user.password) return res.status(401).json({ status: 'error', message: '密碼錯誤!' })
-  const token = 'asd'
-  // const payload = { id: user.id }
-  // const token = jwt.sign(payload, process.env.JWT_SECRET)
-  return res.status(200).json({
-    status: 'success',
-    message: 'ok',
-    token: token,
-    user
-  })
+  db.getConnection((err, connection) => {
+    if (err) {
+      throw new Error('連線問題!')
+    } else {
+      connection.query('SELECT * FROM users where name = ? ', [name],
+        async function (err, user) {
+          let newUser = JSON.stringify(user)
+          newUser = JSON.parse(newUser)
+          if (!user) return res.status(401).json({ status: 'error', message: '此帳號不存在。' })
+          const payload = { id: newUser[0]['id'] }
+          const startTime = moment()
+          const endTime = moment(startTime).add(10, 's')
+          const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 10 })
+          await keyvRedis.set(token, endTime)
+          return res.status(200).json({
+            status: 'success',
+            message: 'ok',
+            token: token,
+            user: newUser[0]
+          })
+        }, connection.release())
+    }})
 })
 
+app.get('/is_auth', token_valid, authenticated, (req, res) => {
+  return res.status(200).json({ status: 'success', message: '令牌有效 true' })
+})
+
+app.use('/', apiErrorHandler)
 app.listen(PORT, () => {
   console.log(`The backend application is running http://localhost:${PORT}`)
 })

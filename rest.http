@@ -22,4 +22,8 @@ Content-Type: application/json
 }
 
 ###
-# @authToken = {{login.response.headers.X-AuthToken}}
+@authtoken = {{login.response.body.token}}
+
+GET {{baseUrl}}/is_auth HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer {{authtoken}}

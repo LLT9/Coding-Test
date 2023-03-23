@@ -1,65 +1,28 @@
 const passport = require('passport')
-const Keyv = require('keyv')
-const TokenStrategy = require('passport-accesstoken').Strategy
-var strategyOptions = {
-  tokenHeader: 'x-custom-token',
-  tokenField: 'custom-token'
+const passportJWT = require('passport-jwt')
+const db = require('../config/mysqldb.js')
+const JWTStrategy = passportJWT.Strategy
+const ExtractJWT = passportJWT.ExtractJwt
+
+const jwtOptions = {
+  jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+  secretOrKey: process.env.JWT_SECRET
 }
 
-const keyv = new Keyv('redis://localhost:6379')
-keyv.on('error', err => console.log('Redis Connection Error', err))
-const users = new Keyv('redis://localhost:6379', { namespace: 'users' })
-// const tokens = new Keyv('redis://localhost:6379', { namespace: 'token' })
-
-
-const userData = {
-  id: 1,
-  name: "admin",
-  password: "Admin&8181",
-  created: 20230322,
-  updated: 20230322,
-  token: 123
-}
-
-async function findUser(user) {
-  const newUser = await users.get(user) // 'users'
-  return newUser
-}
-
-passport.use(new TokenStrategy(strategyOptions,
-  function (token, done) {
-    users.find({ token: token }, function (err, user) {
-      if (err) {
-        return done(err)
-      }
-
-      if (!user) {
-        return done(null, false)
-      }
-
-      if (!user.verifyToken(token)) {
-        return done(null, false)
-      }
-
-      return done(null, user)
-    })
-    // User.findOne({ token: token }, function (err, user) {
-    //   console.log('err', err, 'user', user)
-    //   if (err) {
-    //     return done(err)
-    //   }
-
-    //   if (!user) {
-    //     return done(null, false)
-    //   }
-
-    //   if (!user.verifyToken(token)) {
-    //     return done(null, false)
-    //   }
-
-    //   return done(null, user)
-    // })
-  }
-))
+passport.use('jwt', new JWTStrategy(jwtOptions, (jwtPayload, cb) => {
+    return db.getConnection((err, connection) => {
+    if (err) {
+      console.log(err)
+    } else {
+      return connection.query('SELECT * FROM users where id = ? ', [jwtPayload.id],
+        function (err, user) {
+          let newUser = JSON.stringify(user)
+          newUser = JSON.parse(newUser)
+          if (err) { return cb(err) }
+          if (!user || user.length === 0) return cb(null, false)
+          return cb(null, newUser)
+        }, connection.release())
+    }})
+}))
 
 module.exports = passport

@@ -1,11 +1,5 @@
 # Coding-Test
 
-Please checkout new brach
-
-Title Format: `{{Full Name}} - Title`
-
-## Example:
-
-  Chan tai man - Sample Push
+  Chen-chih-chen - backend-application)
   
-  Wong siu ming - Sample React Written Test
+ 

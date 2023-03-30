@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --first-color: #ececec;
+  --height: 100vh;
+}
+
+#root {
+  background-color: var(--first-color);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: var(--height);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(181, 218, 244);
+}
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+.nav .nav-item-1 {
+  font-size: 32px;
+}
+.nav .nav-item-2 {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav .nav-item-2 .change-lan button {
+  border-style: none;
+  margin-right: 10px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.homepage,
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.homepage .homepage-container,
+.homepage .welcome-container,
+.welcome .homepage-container,
+.welcome .welcome-container {
+  width: 60%;
+  height: 70vh;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.homepage .homepage-container .welcome-container-itme,
+.homepage .welcome-container .welcome-container-itme,
+.welcome .homepage-container .welcome-container-itme,
+.welcome .welcome-container .welcome-container-itme {
+  font-size: 24px;
+  padding: 25px;
+}
+.homepage .homepage-container .form-container,
+.homepage .welcome-container .form-container,
+.welcome .homepage-container .form-container,
+.welcome .welcome-container .form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.homepage .homepage-container .form-container form,
+.homepage .welcome-container .form-container form,
+.welcome .homepage-container .form-container form,
+.welcome .welcome-container .form-container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 250px;
+  width: 100%;
+  margin: 10px;
+}
+.homepage .homepage-container .form-container form .account-container,
+.homepage .homepage-container .form-container form .password-container,
+.homepage .welcome-container .form-container form .account-container,
+.homepage .welcome-container .form-container form .password-container,
+.welcome .homepage-container .form-container form .account-container,
+.welcome .homepage-container .form-container form .password-container,
+.welcome .welcome-container .form-container form .account-container,
+.welcome .welcome-container .form-container form .password-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+.homepage .homepage-container .form-container form .account-container label,
+.homepage .homepage-container .form-container form .password-container label,
+.homepage .welcome-container .form-container form .account-container label,
+.homepage .welcome-container .form-container form .password-container label,
+.welcome .homepage-container .form-container form .account-container label,
+.welcome .homepage-container .form-container form .password-container label,
+.welcome .welcome-container .form-container form .account-container label,
+.welcome .welcome-container .form-container form .password-container label {
+  width: 80px;
+}
+.homepage .homepage-container .form-container form .account-container input,
+.homepage .homepage-container .form-container form .password-container input,
+.homepage .welcome-container .form-container form .account-container input,
+.homepage .welcome-container .form-container form .password-container input,
+.welcome .homepage-container .form-container form .account-container input,
+.welcome .homepage-container .form-container form .password-container input,
+.welcome .welcome-container .form-container form .account-container input,
+.welcome .welcome-container .form-container form .password-container input {
+  width: 50%;
+  height: 25px;
+  padding: 5px;
+}
+.homepage .homepage-container .form-container form button,
+.homepage .welcome-container .form-container form button,
+.welcome .homepage-container .form-container form button,
+.welcome .welcome-container .form-container form button {
+  border-style: none;
+  width: 75px;
+  height: 25px;
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

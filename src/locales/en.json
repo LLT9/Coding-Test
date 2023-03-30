@@ -1,0 +1,15 @@
+{
+    "Home": "Home",
+    "Login": "Login",
+    "Account": "Account",
+    "Password": "Password",
+    "point-Account": "Account",
+    "point-Password": "Password",
+    "Submit": "Submit",
+    "Logout": "Logout",
+    "Welcome": "Welcome to your profile!",
+    "no-input": "Please enter account password.",
+    "no-Account": "Please enter account.",
+    "no-Password": "Please enter password.",
+    "Invalid": "Invalid account or password."
+}

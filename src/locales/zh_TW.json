@@ -1,0 +1,15 @@
+{
+    "Home": "首頁",
+    "Login": "登入",
+    "Account": "帳號",
+    "Password": "密碼",
+    "point-Account": "輸入帳號",
+    "point-Password": "輸入密碼",
+    "Submit": "送出",
+    "Logout": "登出",
+    "Welcome": "歡迎來到個人頁面",
+    "no-input": "請輸入帳號密碼",
+    "no-Account": "請輸入帳號",
+    "no-Password": "請輸入密碼",
+    "Invalid": "帳號密碼錯誤"
+}

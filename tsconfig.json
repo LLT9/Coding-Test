@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "rootDir": ".",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "sourceMap": true,
+    "baseUrl": "./"
+  },
+  "include": [
+    "src/config/prismaClient.ts",
+    "src/**/*.ts",
+    "spec/**/*.ts",
+    "build.ts"
+  ],
+  "exclude": ["src/public/"]
+}

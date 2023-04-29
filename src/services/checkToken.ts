@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import moment, { Moment } from "moment";
+import moment, { Moment, isMoment } from "moment";
 import { StatusCodes } from "http-status-codes";
 
 import { keyvRedis } from "../config/keyvRedis";
@@ -28,8 +28,11 @@ export const checkToken = handleAsync(
       return;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const expiredTime: Moment = await keyvRedis.get(token);
+    const expiredTime = (await keyvRedis.get(token)) as Moment;
+    if (!moment.isMoment(expiredTime)) {
+      next(appError(StatusCodes.UNAUTHORIZED, "Token is not valid", next));
+      return;
+    }
     const timeOut = moment() > expiredTime;
     if (timeOut) {
       await keyvRedis.delete(token);

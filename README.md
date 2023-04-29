@@ -1,11 +1,7 @@
 # Coding-Test
 
-Please checkout new brach
+Title: `Hsu Pi Hsiang - backend coding test`
 
-Title Format: `{{Full Name}} - Title`
-
-## Example:
-
-  Chan tai man - Sample Push
-  
-  Wong siu ming - Sample React Written Test
+Assume valid login with:
+username: "admin"
+password: “Admin&8181”

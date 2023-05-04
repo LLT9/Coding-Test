@@ -9,6 +9,7 @@ import "./App.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import HomeScreen from "./screens/HomeScreen"
 import LoginScreen from "./screens/LoginScreen"
+import ProfileScreen from "./screens/ProfileScreen"
 
 const container = document.getElementById("root")
 const root = createRoot(container)
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginScreen></LoginScreen>,
+  },
+  {
+    path: "/profile",
+    element: <ProfileScreen></ProfileScreen>,
   },
 ])
 

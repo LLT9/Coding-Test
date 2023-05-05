@@ -1,30 +1,28 @@
-import React, { useEffect, useState } from "react"
-import "./Banner.css"
-import requests from "./Requests"
-import axios from "./axios"
-import { useTranslation } from "react-i18next"
+import React, { useEffect, useState } from "react";
+import "./Banner.css";
+import requests from "./Requests";
+import axios from "./axios";
 
 function Banner() {
-  const { t, i18n } = useTranslation()
-  const [movie, setMovie] = useState([])
+  const [movie, setMovie] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(requests.fetchingNetflixOriginals)
+      const request = await axios.get(requests.fetchingNetflixOriginals);
       setMovie(
         request.data.results[
           Math.floor(Math.random() * request.data.results.length - 1)
         ]
-      )
+      );
 
-      return request
+      return request;
     }
 
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   function truncate(str, n) {
-    return str?.length > n ? str.substr(0, n - 1) + "..." : str
+    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
 
   return (
@@ -49,7 +47,7 @@ function Banner() {
 
       <div className="banner--fadeBottom"></div>
     </header>
-  )
+  );
 }
 
-export default Banner
+export default Banner;

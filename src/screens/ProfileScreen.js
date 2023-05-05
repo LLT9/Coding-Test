@@ -1,22 +1,22 @@
-import React, { useEffect } from "react"
-import "./ProfileScreen.css"
-import Nav from "../Nav"
-import { useDispatch, useSelector } from "react-redux"
-import { selectUser } from "../features/userSlice"
-import { logout } from "../features/userSlice"
-import { useNavigate } from "react-router-dom"
-import { useTranslation } from "react-i18next"
+import React, { useEffect } from "react";
+import "./ProfileScreen.css";
+import Nav from "../Nav";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
+import { logout } from "../features/userSlice";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function ProfileScreen() {
-  const { t, i18n } = useTranslation()
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const user = useSelector(selectUser)
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const user = useSelector(selectUser);
   useEffect(() => {
     if (user?.user == null) {
-      navigate("/login")
+      navigate("/login");
     }
-  }, [user])
+  }, [user]);
   return (
     <div className="profileScreen">
       <Nav></Nav>
@@ -25,7 +25,7 @@ function ProfileScreen() {
         <div className="profileScreen_info">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-            alt=""
+            alt="avatar"
             className="avatar"
           ></img>
           <div className="profileScreen_details">
@@ -34,8 +34,8 @@ function ProfileScreen() {
               <h3>{t("Plans")}</h3>
               <button
                 onClick={() => {
-                  dispatch(logout())
-                  navigate("/")
+                  dispatch(logout());
+                  navigate("/");
                 }}
                 className="profileScreen_signOut"
               >
@@ -46,7 +46,7 @@ function ProfileScreen() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ProfileScreen
+export default ProfileScreen;

@@ -1,26 +1,25 @@
-import React, { useEffect, useState } from "react"
-import "./Nav.css"
-import logo from "./logo.png"
-import { Link, useNavigate } from "react-router-dom"
-import { useSelector } from "react-redux"
-import { selectUser } from "./features/userSlice"
-import LanguageBtns from "./LanguageBtns"
+import React, { useEffect, useState } from "react";
+import "./Nav.css";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
+import LanguageBtns from "./LanguageBtns";
 
 export default function Nav() {
-  const [show, handleShow] = useState(false)
-  const user = useSelector(selectUser)
+  const [show, handleShow] = useState(false);
+  const user = useSelector(selectUser);
 
   const transistionNavBar = () => {
     if (window.scrollY > 100) {
-      handleShow(true)
+      handleShow(true);
     } else {
-      handleShow(false)
+      handleShow(false);
     }
-  }
+  };
   useEffect(() => {
-    window.addEventListener("scroll", transistionNavBar)
-    return () => window.removeEventListener("scroll", transistionNavBar)
-  }, [])
+    window.addEventListener("scroll", transistionNavBar);
+    return () => window.removeEventListener("scroll", transistionNavBar);
+  }, []);
 
   return (
     <div className={`nav ${show && "nav_balck"}`}>
@@ -54,5 +53,5 @@ export default function Nav() {
         )}
       </div>
     </div>
-  )
+  );
 }

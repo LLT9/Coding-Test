@@ -1,18 +1,19 @@
-import React, { useState } from "react"
-import "./LoginScreen.css"
-import SignUpScreen from "./SignUpScreen"
-import { useTranslation } from "react-i18next"
-import LanguageBtns from "../LanguageBtns"
+import React, { useState } from "react";
+import "./LoginScreen.css";
+import SignUpScreen from "./SignUpScreen";
+import { useTranslation } from "react-i18next";
+import LanguageBtns from "../LanguageBtns";
 
 function LoginScreen() {
-  const [signIn, setSignIn] = useState(false)
-  const { t, i18n } = useTranslation()
+  const [signIn, setSignIn] = useState(false);
+  const { t } = useTranslation();
   return (
     <div className="loginScreen">
       <div className="loginScreen_background">
         <img
           className="loginScreen_logo"
           src="https://raw.githubusercontent.com/thatanjan/netflix-clone-yt/youtube/media/netflix.svg"
+          alt="logo"
         ></img>
       </div>
       <button className="loginScreen_button" onClick={() => setSignIn(true)}>
@@ -50,7 +51,7 @@ function LoginScreen() {
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default LoginScreen
+export default LoginScreen;

@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react"
-import "./Row.css"
-import axios from "./axios"
-import { useTranslation } from "react-i18next"
+import React, { useEffect, useState } from "react";
+import "./Row.css";
+import axios from "./axios";
+import { useTranslation } from "react-i18next";
 
 function Row({ title, fetchUrl, isLargeRow = false }) {
-  const [movies, setMovies] = useState([])
-  const { t, i18n } = useTranslation()
+  const [movies, setMovies] = useState([]);
+  const { t } = useTranslation();
 
-  const base_url = "https://image.tmdb.org/t/p/original/"
+  const base_url = "https://image.tmdb.org/t/p/original/";
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(fetchUrl)
-      setMovies(() => request.data.results)
-      return request
+      const request = await axios.get(fetchUrl);
+      setMovies(() => request.data.results);
+      return request;
     }
 
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   return (
     <div className="row">
@@ -40,7 +40,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default Row
+export default Row;

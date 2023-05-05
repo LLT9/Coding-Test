@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react"
 import "./Row.css"
 import axios from "./axios"
+import { useTranslation } from "react-i18next"
 
 function Row({ title, fetchUrl, isLargeRow = false }) {
   const [movies, setMovies] = useState([])
+  const { t, i18n } = useTranslation()
 
   const base_url = "https://image.tmdb.org/t/p/original/"
 
@@ -19,7 +21,7 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
 
   return (
     <div className="row">
-      <h2>{title}</h2>
+      <h2>{t(title)}</h2>
       <div className="row_posters">
         {movies?.map(
           (movie) =>

@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import HomeScreen from "./screens/HomeScreen"
 import LoginScreen from "./screens/LoginScreen"
 import ProfileScreen from "./screens/ProfileScreen"
+import "./i18n"
 
 const container = document.getElementById("root")
 const root = createRoot(container)

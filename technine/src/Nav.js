@@ -4,6 +4,7 @@ import logo from "./logo.png"
 import { Link, useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { selectUser } from "./features/userSlice"
+import LanguageBtns from "./LanguageBtns"
 
 export default function Nav() {
   const [show, handleShow] = useState(false)
@@ -31,6 +32,9 @@ export default function Nav() {
             className="nav_logo"
           ></img>
         </Link>
+        <div className="nav_rightBtns">
+          <LanguageBtns></LanguageBtns>
+        </div>
         {user?.user?.email ? (
           <Link to="/profile">
             <img

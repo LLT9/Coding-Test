@@ -5,18 +5,18 @@ import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { selectUser } from "../features/userSlice"
 import { login, logout } from "../features/userSlice"
+import { useTranslation } from "react-i18next"
 
 function SignUpScreen() {
+  const { t, i18n } = useTranslation()
   const user = useSelector(selectUser)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const emailRef = useRef(null)
+  const [loginError, SetLoginError] = useState("")
   const passwordRef = useRef(null)
   const [defaultAccount, setDefaultAccount] = useState("admin")
   const [defaultPassword, setDefaultPassword] = useState("Admin&8181")
-  const register = (e) => {
-    e.preventDefault()
-  }
 
   async function signIn(e) {
     e.preventDefault()
@@ -24,7 +24,6 @@ function SignUpScreen() {
       emailRef.current.value,
       passwordRef.current.value
     )
-    console.log(ValidationResult.isAuthenticated)
     if (ValidationResult.isAuthenticated) {
       dispatch(
         login({
@@ -32,14 +31,19 @@ function SignUpScreen() {
           uid: ValidationResult.uid,
         })
       )
+      SetLoginError(() => "")
       navigate("/")
+    }
+
+    if (!ValidationResult.isAuthenticated) {
+      SetLoginError(() => "login failed")
     }
   }
 
   return (
     <div className="signupScreen">
       <form>
-        <h1>Sign In</h1>
+        <h1>{t("Sign In")}</h1>
         <input
           ref={emailRef}
           placeholder="Email"
@@ -55,14 +59,13 @@ function SignUpScreen() {
           onChange={(e) => setDefaultPassword(e.target.value)}
         ></input>
         <button type="submit" onClick={(e) => signIn(e)}>
-          Sign In
+          {t("Sign In")}
         </button>
         <h4>
-          <span className="signupScreen_gray">New to Netflix? </span>
-          <span className="signupScreen_link" onClick={register}>
-            Sign Up now.
-          </span>
+          <span className="signupScreen_gray">{t("New to Netflix?")} </span>
+          <span className="signupScreen_link">{t("Sign Up now.")}</span>
         </h4>
+        <div className="signupScreen_error">{t(loginError)}</div>
       </form>
     </div>
   )

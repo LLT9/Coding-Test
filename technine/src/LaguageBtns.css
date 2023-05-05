@@ -1,0 +1,28 @@
+.nav_languageBtns {
+  max-width: 250px;
+  height: 40px;
+}
+
+select {
+  background-color: #e50914;
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+select option {
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+}
+
+select option:hover {
+  background-color: #ccc;
+  color: #fff;
+}

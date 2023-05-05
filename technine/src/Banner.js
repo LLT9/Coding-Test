@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react"
 import "./Banner.css"
 import requests from "./Requests"
 import axios from "./axios"
+import { useTranslation } from "react-i18next"
 
 function Banner() {
+  const { t, i18n } = useTranslation()
   const [movie, setMovie] = useState([])
 
   useEffect(() => {

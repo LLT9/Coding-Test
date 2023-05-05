@@ -1,8 +1,12 @@
-import React, { useState } from "react";
-import "./LoginScreen.css";
-import SignUpScreen from "./SignUpScreen";
+import React, { useState } from "react"
+import "./LoginScreen.css"
+import SignUpScreen from "./SignUpScreen"
+import { useTranslation } from "react-i18next"
+import LanguageBtns from "../LanguageBtns"
+
 function LoginScreen() {
-  const [signIn, setSignIn] = useState(false);
+  const [signIn, setSignIn] = useState(false)
+  const { t, i18n } = useTranslation()
   return (
     <div className="loginScreen">
       <div className="loginScreen_background">
@@ -12,8 +16,11 @@ function LoginScreen() {
         ></img>
       </div>
       <button className="loginScreen_button" onClick={() => setSignIn(true)}>
-        Sign In
+        {t("Sign In")}
       </button>
+      <div className="loginScreen_languageBtns">
+        <LanguageBtns></LanguageBtns>
+      </div>
       <div className="loginScreen_gradient"></div>
 
       <div className="loginScreen_body">
@@ -21,20 +28,21 @@ function LoginScreen() {
           <SignUpScreen></SignUpScreen>
         ) : (
           <>
-            <h1>Unlimited films, TV programmes and more.</h1>
-            <h2>Watch anywhere. Cancel at any time.</h2>
+            <h1>{t("Unlimited films, TV programmes and more.")}</h1>
+            <h2>{t("Watch anywhere. Cancel at any time.")}</h2>
             <h3>
-              Ready to watch? Enter your email to create or restart your
-              memebership.
+              {t(
+                "Ready to watch? Enter your email to create or restart your membership."
+              )}
             </h3>
             <div className="loginScreen_input">
               <form>
-                <input type="email" placeholder="Email Address"></input>
+                <input type="email" placeholder={t("Email Address")}></input>
                 <button
                   className="loginScreen_getStarted"
                   onClick={() => setSignIn(true)}
                 >
-                  Get Started
+                  {t("Get Started")}
                 </button>
               </form>
             </div>
@@ -42,7 +50,7 @@ function LoginScreen() {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default LoginScreen;
+export default LoginScreen

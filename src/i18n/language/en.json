@@ -1,0 +1,23 @@
+{
+    "登入": "Login",
+    "登出": "Logout",
+    "會員": "Member",
+    "會員資料": "Profile",
+    "歡迎來到頁面入口": "Welcome to the entrance",
+    "歡迎回來": "Welcom back!",
+    "登入以繼續": "Log in to continue",
+    "帳號": "account",
+    "密碼": "password",
+    "必填": "required",
+    "長度需大於6": "The length must be greater than 6",
+    "登入錯誤訊息": "Account or password error, please try again",
+    "追蹤": "Follow",
+    "傳訊息": "Message",
+    "編輯": "Edit",
+    "全名": "Full Name", 
+    "信箱": "Email",
+    "電話": "Phobe",
+    "手機": "Mobile",
+    "地址": "Address",
+    "專案進度": "Project Progress"
+  }

@@ -6,6 +6,7 @@
 - [x] 登入
 - [x] 登出
 - [x] 顯示會員資料
+- [x] 切換中文/英文語系
 
 ## 安裝
 以下將會引導你如何安裝此專案到你的電腦上。
@@ -37,6 +38,7 @@ http://localhost:8000/
 - src
   - assets - 圖片放置處
   - components - React 元件放置處
+  - i18n - 語系檔案放置處
   - pages - 頁面元件放置處
   - slice - redux slice 放置處
   - stylesheets - scss 樣式放置處
@@ -47,6 +49,7 @@ http://localhost:8000/
 - React-router-dom v6.9.0
 - React-Redux v8.0.5
 - Reduxjs/toolkit v1.9.5
+- React-i18next v12.2.2
 - React-Hook-Form v7.43.9
 - Bootstrap v5.2.3
 - Bootstrap-icons v1.10.5

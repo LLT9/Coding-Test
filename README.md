@@ -30,7 +30,7 @@ npm start
 ### 開啟專案
 在瀏覽器網址列輸入以下即可看到畫面
 ```
-http://localhost:8000/
+http://localhost:000/
 ```
 
 ## 資料夾說明

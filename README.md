@@ -1,5 +1,6 @@
 # Coding-Test
-![image](https://hackmd.io/_uploads/SkF5sFJr2.png)
+
+![image](https://i.imgur.com/y3wqxKT.jpg)
 
 ## 功能 
 - [x] 登入
@@ -15,7 +16,7 @@ git clone https://github.com/linyawun/Coding-Test.git -b React-Written-Test
 ```
 ### 移動到專案內
 ```bash
-cd Muku
+cd Coding-Test-React-Written-Test
 ```
 ### 安裝套件
 ```bash

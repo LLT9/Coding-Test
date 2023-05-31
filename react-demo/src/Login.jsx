@@ -4,41 +4,42 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "./redux/login-redux/login.js";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 function Login() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const { t, i18n } = useTranslation();
   const loginHandler = () => {
-
     if (username == "admin" && password == "Admin&8181") {
       dispatch(login());
-      console.log("success");
       navigate("/profile");
     }
   };
+
   return (
     <>
       <Form>
         <Form.Group className="mb-3">
-          <Form.Label>Username</Form.Label>
+          <Form.Label>{t("Username")}</Form.Label>
           <Form.Control
             onChange={(e) => {
               setUsername(e.target.value);
             }}
             type="username"
-            placeholder="Enter username"
+            placeholder={t("Enter username")}
           ></Form.Control>
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>{t("Password")}</Form.Label>
           <Form.Control
             onChange={(e) => {
               setPassword(e.target.value);
             }}
             type="password"
-            placeholder="Enter password"
+            placeholder={t("Enter password")}
           ></Form.Control>
         </Form.Group>
         <Button
@@ -49,7 +50,7 @@ function Login() {
             loginHandler();
           }}
         >
-          Submit
+          {t("Login")}
         </Button>
       </Form>
     </>

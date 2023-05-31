@@ -11,16 +11,16 @@ Title Format: `{{Full Name}} - Title`
   Wong siu ming - Sample React Written Test
 ### Requirement
 
-- [x] a. Simple login page
-- [x] b. Simple use Profile page
+- [x] a. Simple login page `/login`
+- [x] b. Simple use Profile page `/profile`
                      -- Must after login success
 - [ ] c. Simple welcome page
 - [ ] d. Responsive web
 - [x] e. Routing for page navigation
-- [ ] f.  Support 2 languages
-- [ ] g.  Modules Required
+- [x] f.  Support 2 languages **fr,en**
+- [x] g.  Modules Required
      - [x] * react-router-dom
-     - [ ] **React-i18next  
+     - [x] **React-i18next
 
 #### Bonus (optional) :
 

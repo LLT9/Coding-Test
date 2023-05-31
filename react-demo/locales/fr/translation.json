@@ -1,0 +1,10 @@
+{
+  "Username": "Nom d'utilisateur",
+  "Enter username": "Saisissez votre nom d'utilisateur",
+  "Password": "Mot de passe",
+  "Enter password": "Entrer le mot de passe",
+  "Login": "Connexion",
+  "Profile": "Profil",
+  "Admin Profile": "Profil administrateur",
+  "Logout": "Se déconnecter"
+}

@@ -3,16 +3,18 @@ import Card from "react-bootstrap/Card";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "./redux/login-redux/login";
+import { useTranslation } from "react-i18next";
 function Profile() {
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(logout());
-    navigate("/login");
+    navigate("/login", { replace: true });
   };
   return (
     <>
-      <h1>Profile</h1>
+      <h1>{t("Profile")}</h1>
 
       <Card style={{ width: "18rem" }}>
         <Card.Img
@@ -21,7 +23,7 @@ function Profile() {
           src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png"
         />
         <Card.Body>
-          <Card.Title>Admin Profile</Card.Title>
+          <Card.Title>{t("Admin Profile")}</Card.Title>
           <Card.Text>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
             suscipit doloribus molestiae ratione enim accusantium totam, dolore
@@ -35,7 +37,7 @@ function Profile() {
             handleLogout();
           }}
         >
-          Logout
+          {t("Logout")}
         </Button>
       </Card>
     </>

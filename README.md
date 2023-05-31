@@ -11,13 +11,19 @@ Title Format: `{{Full Name}} - Title`
   Wong siu ming - Sample React Written Test
 ### Requirement
 
-- [ ] a. Simple login page
-- [ ] b. Simple use Profile page
+- [x] a. Simple login page
+- [x] b. Simple use Profile page
                      -- Must after login success
 - [ ] c. Simple welcome page
 - [ ] d. Responsive web
-- [ ] e. Routing for page navigation
+- [x] e. Routing for page navigation
 - [ ] f.  Support 2 languages
 - [ ] g.  Modules Required
-     - [ ] * react-router-dom
-     - [ ] **React-i18next
+     - [x] * react-router-dom
+     - [ ] **React-i18next  
+
+#### Bonus (optional) :
+
+- [ ] UseEffect
+- [x] Redux save status for login success when access user profile page
+- [ ] Separate Private and Public Route

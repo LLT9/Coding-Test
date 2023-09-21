@@ -1,0 +1,8 @@
+{
+  "login": "login",
+  "logout": "logout",
+  "username": "username",
+  "password": "password",
+  "required": "required",
+  "login_error_message": "user name or password incorrect"
+}

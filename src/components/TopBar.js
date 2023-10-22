@@ -12,7 +12,7 @@ import { pic } from '../photo/photo';
 
 const TopBar = () => {
 
-  const Arr = Array(4).fill(null)
+  const Arr = Array(3).fill(null)
   return (
     <>
       <SectionOne />

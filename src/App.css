@@ -1,5 +1,7 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+
 .most-outer{
     max-width:450px;
 }
@@ -17,9 +19,6 @@
     height:auto;
 }
 
-.scroll-bar{
-    overflow:scroll;
-}
 
 .w-20{
     width:20%

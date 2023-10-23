@@ -11,8 +11,8 @@ const HeadPicture = ({className,src,type}) => {
     
     let value = <></>
     const contentBar = <div style={{backgroundImage:`url('${src}')`}} className={["img-head-outer rounded-circle",className].join(" ")}></div>
-    const topBar =  <div className={["img-head-outer rounded-circle",className].join(" ")}><img src={src} /></div>
-
+    const topBar =  <div className={["img-head-outer rounded-circle flex-shrink-0",className].join(" ")}><img src={src} /></div>
+    
     if (type === "topBar"){
         value = topBar
     } else if(type === "contentBar") {

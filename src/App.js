@@ -36,7 +36,7 @@ function App() {
   
   return (
     <div className="most-outer m-auto">
-      <TopBar />
+      <div className="position-sticky top-0"><TopBar /></div>
       {data?.map((item, i) => <ContentBar key={i} {...item ? { ...item } : ""} />)}
     </div>
   );

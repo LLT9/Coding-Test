@@ -8,8 +8,8 @@ import dayjs from 'dayjs';
 const ContentBar = ({ name, image, message, unread_message, receive_time }) => {
 
     return (
-        <div className="d-flex align-items-center justify-content-between my-2 px-3">
-            <HeadPicture className="img-head-outer-smaller w-20" src={image || ""} />
+        <div className="d-flex align-items-center justify-content-between my-2 px-3 contentbar-minheight">
+            <HeadPicture type="contentBar" className="img-head-outer-smaller w-20" src={image || ""}/>
             <div className="d-flex align-items-start justify-content-between w-80">
                 <div className="d-flex flex-column">
                     <span className="text-secondary">{name}</span>

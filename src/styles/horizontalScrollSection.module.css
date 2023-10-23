@@ -1,0 +1,26 @@
+.container {
+    overflow-x: scroll;
+    white-space: nowrap;
+    border-bottom: 2px solid #CCC; 
+    padding: 2rem;    
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.createStoryBtnContainer {
+    display: inline-block;
+    border-radius: 50%;
+    margin: 10px;
+    border: #AAA 2px solid;
+    box-shadow: 0px 12px 29px 0px rgba(100, 100, 111, 0.5);
+}
+
+.circleImgContainer {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    display: inline-block;
+    border-radius: 50%;
+    margin: 10px;
+    box-shadow: 0px 12px 29px 0px rgba(100, 100, 111, 0.5);
+}

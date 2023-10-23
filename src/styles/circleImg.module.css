@@ -1,0 +1,38 @@
+.container {
+    height: 100px; 
+    width: 100px; 
+    overflow: hidden;
+    margin: 3px;
+    position: relative;
+}
+
+.createBtn {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.plusIconContainer {
+    color: #444;
+    position: absolute;
+    right: 3px;
+    bottom: 1px;
+    z-index: 1;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,64 @@
+.container {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.contentContainer {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.circleImgContainer {
+    flex-shrink: 0;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.textContainer {
+    flex-grow: 1;
+    overflow: hidden;
+    margin-left: 1rem;
+}
+
+.title {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.infoContainer {
+    flex-shrink: 0;
+    width: 50px;
+    text-align: end;
+}
+
+.date {
+    text-align: right;
+}
+
+.unreadMsgContainer {
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.unreadMsg {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #a1cb9f;
+    border-radius: 50%;
+    color: #FFF
+}

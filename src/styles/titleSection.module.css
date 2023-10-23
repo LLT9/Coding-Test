@@ -1,0 +1,8 @@
+.container {
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #444;
+    display: flex;
+    justify-content: space-between;
+}

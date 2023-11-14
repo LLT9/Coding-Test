@@ -147,7 +147,7 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #C0C0C0;
+  color: #A9A9A9;
 }
 
 .message_Unread {
@@ -156,7 +156,8 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #778899;
+  color: #696969;
+  font-weight: bold;
 }
 
 .chat_Time {
@@ -177,5 +178,5 @@ body {
   text-align: center;
   color: #fff;
   margin-top: 5px;
-  margin-left: 25px;
+  margin-left: 28px;
 }

@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+  'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+}
+
+.app {
+  width: 680px;
+}
+
+.header {
+  margin-top: 20px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.header_Right {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icons {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: row;
+  overflow: hidden;
+  gap: 40px;
+  height: 70px;
+  width: 680px;
+  border-bottom: 1px solid #C0C0C0;
+}
+
+.camera_Main {
+  width: 50px;
+  height: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+  position: relative;
+}
+
+.camera_Plus {
+  width: 12px;
+  height: 12px;
+  background-color: #FFFFFF;
+  z-index: 9;
+  box-shadow: 0px 0px 5px #C0C0C0;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  border-radius: 50%;
+}
+
+.camera_Plus::before {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: #C0C0C0;
+  width: 10px;
+  margin-left: -5px;
+  left: 50%;
+  top: 5px;
+  bottom: 5px;
+  z-index: 9;
+}
+
+.camera_Plus::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: #C0C0C0;
+  height: 10px;
+  margin-top: -5px;
+  top: 50%;
+  left: 5px;
+  right: 5px;
+  z-index: 9;
+}
+
+.camera_Border {
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #C0C0C0;
+  position: absolute;
+}
+
+#camera {
+  width: auto;
+  height: 20px;
+  padding: 15px;
+  filter: invert(68%) sepia(0%) saturate(2377%) hue-rotate(316deg) brightness(117%) contrast(88%);
+}
+
+.story {
+  display: flex;
+  position: relative;
+  gap: 10px;
+}
+
+#icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid pink;
+}
+
+.chats {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+}
+
+.chat {
+  display: flex;
+  margin-top: 40px;
+  margin-left: 30px;
+  justify-content: space-between;
+}
+
+.image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.chat_Info {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 100px;
+}
+
+.username {
+  font-size: 20px;
+}
+
+.message_Read {
+  width: 500px;
+  font-size: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #C0C0C0;
+}
+
+.message_Unread {
+  width: 500px;
+  font-size: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #778899;
+}
+
+.chat_Time {
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+}
+
+.receive_Time {
+  font-size: 15px;
+}
+
+.unread_Message {
+  font-size: 13px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #25D366;
+  text-align: center;
+  color: #fff;
+  margin-top: 5px;
+  margin-left: 25px;
+}

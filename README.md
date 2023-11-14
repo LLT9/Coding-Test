@@ -1,3 +1,3 @@
 # Coding-Test
 
-`{{Yuen Ching Ho Edward}} - Coding Test Inivation ID: TR440`
+`Yuen Ching Ho Edward - Coding Test Inivation ID: TR440`

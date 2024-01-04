@@ -1,0 +1,15 @@
+.feed {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.feed > button > img {
+  border: 5px solid pink;
+}
+
+.camera-img {
+  width: 50px;
+}

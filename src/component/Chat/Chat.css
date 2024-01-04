@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex: 0.8;
+  padding: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid grey;
+}
+
+.container:hover {
+  background-color: lightgray;
+}

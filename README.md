@@ -1,11 +1,11 @@
-# Coding-Test
+## Available Scripts
 
-Please checkout new brach
+In the project directory, you can run:
 
-Title Format: `{{Full Name}} - Title`
+## Install dependencies
+Please run `npm install`
 
-## Example:
+### `npm start`
 
-  Chan tai man - Sample Push
-  
-  Wong siu ming - Sample React Written Test
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

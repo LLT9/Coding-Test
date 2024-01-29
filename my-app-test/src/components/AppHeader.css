@@ -1,0 +1,50 @@
+.header-right-container {
+    display: flex;
+    align-items: center;
+}
+
+.outer-bubble {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 5px 10px;
+    position: relative;
+    border: 1px solid white; /* White border when search is inactive */
+    transition: border 0.3s ease-in-out;
+}
+
+.outer-bubble.active {
+    border: 1px solid #c1c1c1; /* Visible border when search is active */
+}
+
+.search-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.search-btn {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex; /* To center the SVG icon */
+}
+
+
+  .menu-item {
+    border: none;
+    background: none;
+    padding: 5px;
+    cursor: pointer;
+    text-align: left;
+  }
